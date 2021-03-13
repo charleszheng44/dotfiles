@@ -1,0 +1,79 @@
+#!/usr/bin/env bash
+
+bookmarkfile=$(realpath ~/.bookmarks)
+
+# list all bookmark
+list_bookmarks() {
+    if [ ! -f $bookmarkfile ];
+    then
+        echo "bookmarks empty"
+        return 1
+    fi
+    cat $bookmarkfile
+}
+
+# add current dir to bookmarks
+add_bookmark() {
+    if [ "$1" == "" ];
+    then
+        echo "please specify a bookmark name"
+        return 1
+    fi
+    bookmark=$1
+    current_dir=$PWD
+    # create bookmark file if not exist
+    if [ ! -f $bookmarkfile ];
+    then
+        touch $bookmarkfile
+    fi
+    echo "$bookmark $current_dir" >> $bookmarkfile
+}
+
+# go to bookmark
+goto_bookmark() {
+    if [ "$1" == "" ];
+    then
+        echo "please specify a bookmark name"
+        return 1
+    fi
+    target_bookmark=$1
+    if [ ! -f $bookmarkfile ];
+    then
+        echo "${target_bookmark} not found"
+        return 1
+    fi
+    while read -r line; 
+    do
+        tmp_bookmark=$(echo $line | awk '{print $1}')
+        tmp_path=$(echo $line | awk '{print $2}')
+        if [ "${tmp_bookmark}" == "${target_bookmark}" ]; 
+        then
+            cd ${tmp_path}
+            return
+        fi
+    done < $bookmarkfile
+
+    echo "${target_bookmark} not found"
+    return 1
+}
+
+# delete book bookmark
+delete_bookmark() {
+    if [ "$1" == "" ];
+    then
+        echo "please specify a bookmark name"
+        return 1
+    fi
+    target_bookmark=$1
+    if [ ! -f $bookmarkfile ];
+    then
+        echo "${target_bookmark} not found"
+        return 1
+    fi
+    while read -r line; 
+    do 
+        [[ ! $line =~ ${target_bookmark} ]] && echo "$line"
+    done < $bookmarkfile > tmp_file
+    mv tmp_file $bookmarkfile 
+    echo "${target_bookmark} has been deleted"
+}
