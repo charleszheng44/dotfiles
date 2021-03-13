@@ -1,0 +1,98 @@
+window:
+  padding:
+    x: 5
+    y: 5
+  decorations: none
+scrolling:
+  history: 10000
+  multiplier: 3
+
+font:
+  normal:
+    family: Ubuntu Mono derivative Powerline
+    style: Regular
+  bold:
+    family: Ubuntu Mono derivative Powerline
+    style: Bold
+  italic:
+    family: Ubuntu Mono derivative Powerline
+    style: Italic
+  bold_italic:
+    family: Ubuntu Mono derivative Powerline
+    style: Bold Italic
+  size: 16
+  offset:
+    x: 1
+    y: 1
+draw_bold_text_with_bright_colors: false
+background_opacity: 0.95
+
+cursor:
+  style:
+    shape: Block
+  unfocused_hollow: true
+
+live_config_reload: true
+
+shell:
+  program: /usr/local/bin/bash
+  args:
+    - --login
+
+key_bindings:
+  - { key: Q, mods: Control, chars: "\x11" }
+  - { key: N, mods: Control|Shift, action: SpawnNewInstance }
+
+schemes:
+  embark: &embark
+    primary:
+      background: '0x1e1c31'
+      foreground: '0xcbe3e7'
+    cursor:
+      text: '0x1e1c31'
+      cursor: '0xa1efd3'
+    normal:
+      black: '0x1e1c31'
+      red: '0xf48fb1'
+      green: '0xa1efd3'
+      yellow: '0xffe6b3'
+      blue: '0x91ddff'
+      magenta: '0xd4bfff'
+      cyan: '0x87dfeb'
+      white: '0xcbe3e7'
+    bright:
+      black: '0x585273'
+      red: '0xf02e6e'
+      green: '0x62d196'
+      yellow: '0xf2b482'
+      blue: '0x65b2ff'
+      magenta: '0xa37acc'
+      cyan: '0x63f2f1'
+      white: '0x8a889d'
+
+  iceberg: &iceberg
+    primary:
+      background: '#161821'
+      foreground: '#d2d4de'
+
+    normal:
+      black:   '#161821'
+      red:     '#e27878'
+      green:   '#b4be82'
+      yellow:  '#e2a478'
+      blue:    '#84a0c6'
+      magenta: '#a093c7'
+      cyan:    '#89b8c2'
+      white:   '#c6c8d1'
+
+    bright:
+      black:   '#6b7089'
+      red:     '#e98989'
+      green:   '#c0ca8e'
+      yellow:  '#e9b189'
+      blue:    '#91acd1'
+      magenta: '#ada0d3'
+      cyan:    '#95c4ce'
+      white:   '#d2d4de'
+
+colors: *iceberg
