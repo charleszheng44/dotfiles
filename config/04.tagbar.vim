@@ -27,3 +27,5 @@ let g:tagbar_type_go = {
     \ 'ctagsargs' : '-sort -silent'
 \ }
 
+" shortcut for opening tagbar
+map <C-m> :Tagbar<CR>

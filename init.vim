@@ -47,9 +47,9 @@ set pastetoggle=<F2>
 
 " set colorscheme
 syntax enable
-set background=dark
+" set background=dark
 set termguicolors 
-colorscheme iceberg
+colorscheme gruvbox
 highlight Normal ctermbg=NONE
 highlight Comment cterm=italic gui=italic
 

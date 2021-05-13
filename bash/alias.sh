@@ -1,6 +1,6 @@
 alias tmux='tmux -2'
 alias ..='cd ..'
-alias ls='ls -G'
+alias ls='ls -G --color=auto'
 alias o='open'
 alias t='TERM=screen-256color-bce tmux -2'
 alias tmux='TERM=screen-256color-bce tmux -2'
@@ -29,4 +29,4 @@ alias ab='add_bookmark'
 alias gb='goto_bookmark'
 alias db='delete_bookmark'
 
-alias kc='kubectl'
+alias r='ranger'

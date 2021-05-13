@@ -26,6 +26,18 @@ add_bookmark() {
     then
         touch $bookmarkfile
     fi
+    
+    while read -r line;
+    do
+        read -r bm path <<< $line
+        # if the bookmark exists, update it
+        if [ "$bm" == "$bookmark" ] 
+        then
+            sed -i "s|$path|$current_dir|g" $bookmarkfile
+            return
+        fi
+    done < $bookmarkfile
+    # else, generate a new entry 
     echo "$bookmark $current_dir" >> $bookmarkfile
 }
 

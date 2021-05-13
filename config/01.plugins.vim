@@ -20,7 +20,7 @@ Plug 'embark-theme/vim', {'as': 'embark'}
 Plug 'edkolev/tmuxline.vim'
 Plug 'cocopon/iceberg.vim'
 " fzf fuzzy file search
-Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
 call plug#end()

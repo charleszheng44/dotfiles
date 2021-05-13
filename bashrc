@@ -1,7 +1,3 @@
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-   . $(brew --prefix)/etc/bash_completion
-fi
-
 # Set the terminal color 
 export TERM=xterm-256color
 
@@ -54,44 +50,18 @@ function parse_git_dirty {
 
 export PS1="\[\e[32m\]> \[\e[m\]\[\e[34m\]\W\[\e[m\] \[\e[31m\]\`parse_git_branch\`\[\e[m\] "
 
-# golang env setup
-export GOPATH="/Users/zc/Work/go"
-export PATH=$PATH:$GOPATH/bin
-
-# cctools env setup
-export cctools="/Users/zc/Work/ccl-wk/cctools"
-export CCTOOLS="/Users/zc/cctools"
-export PATH=$PATH:$CCTOOLS/bin
-
-# fzf keybinding
-source ~/.key-bindings.sh
-
-source ~/.config/bash/alias.sh
-source ~/.config/bash/alias_cmd.sh
+source $HOME/.config/bash/alias.sh
+source $HOME/.config/bash/alias_cmd.sh
 
 # apps 
-source ~/.config/bash/bookmark.sh
+source $HOME/.config/bash/bookmark.sh
 
-# make sure mojave can find perl lib installed by brewperl
-export PATH=/usr/local/bin:$PATH
-
-# git autocompletion
-[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion || {
-    # if not found in /usr/local/etc, try the brew --prefix location
-    [ -f "$(brew --prefix)/etc/bash_completion.d/git-completion.bash" ] && \
-        . $(brew --prefix)/etc/bash_completion.d/git-completion.bash
-}
-
-
-
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
-export GOOGLE_APPLICATION_CREDENTIALS="/Users/zc/Work/gcloud/credentials/mf-kube-oper-monitoring-admin.json"
+[ -f $HOME/Works/dotfiles/fzf.bash ] && source $HOME/Works/dotfiles/fzf.bash
 
 export EDITOR=nvim
 export BASH_SILENCE_DEPRECATION_WARNING=1
-export PATH="/usr/local/opt/python@3.9/bin":$PATH
 
+export PATH=$PATH:$HOME/.cargo/bin
 source "$HOME/.cargo/env"
-
-
+export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:$HOME/go/bin
