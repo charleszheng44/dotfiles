@@ -30,3 +30,9 @@ alias gb='goto_bookmark'
 alias db='delete_bookmark'
 
 alias r='ranger'
+
+# aliases for Linux
+if [ "$(uname)" == "Linux" ];
+then
+    alias o='xdg-open'  
+fi
