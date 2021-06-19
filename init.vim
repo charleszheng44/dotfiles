@@ -49,7 +49,7 @@ set pastetoggle=<F2>
 syntax enable
 " set background=dark
 set termguicolors 
-colorscheme gruvbox
+colorscheme nord
 highlight Normal ctermbg=NONE
 highlight Comment cterm=italic gui=italic
 

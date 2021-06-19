@@ -5,7 +5,7 @@ export TERM=xterm-256color
 function parse_git_branch() {
 	BRANCH=`git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
 	if [ ! "${BRANCH}" == "" ]
-	then
+    then
 		STAT=`parse_git_dirty`
 		echo "[${BRANCH}${STAT}]"
 	else
@@ -50,18 +50,24 @@ function parse_git_dirty {
 
 export PS1="\[\e[32m\]> \[\e[m\]\[\e[34m\]\W\[\e[m\] \[\e[31m\]\`parse_git_branch\`\[\e[m\] "
 
-source $HOME/.config/bash/alias.sh
-source $HOME/.config/bash/alias_cmd.sh
+# aliases
+source $HOME/Works/dotfiles/bash/alias.sh
+source $HOME/Works/dotfiles/bash/alias_cmd.sh
 
 # apps 
-source $HOME/.config/bash/bookmark.sh
+source $HOME/Works/dotfiles/bash/bookmark.sh
 
+# setup shortcuts for the fzf
 [ -f $HOME/Works/dotfiles/fzf.bash ] && source $HOME/Works/dotfiles/fzf.bash
 
 export EDITOR=nvim
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
+# go related setting
+export PATH=$PATH:/usr/local/go/bin
+export GOPATH=$HOME/Works/go
+export PATH=$PATH:$GOPATH/bin
+
 export PATH=$PATH:$HOME/.cargo/bin
 source "$HOME/.cargo/env"
-export PATH=$PATH:/usr/local/go/bin
-export PATH=$PATH:$HOME/go/bin
+. "$HOME/.cargo/env"

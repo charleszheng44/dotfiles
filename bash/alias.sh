@@ -1,6 +1,6 @@
 alias tmux='tmux -2'
 alias ..='cd ..'
-alias ls='ls -G --color=auto'
+alias ls='ls -G'
 alias o='open'
 alias t='TERM=screen-256color-bce tmux -2'
 alias tmux='TERM=screen-256color-bce tmux -2'
