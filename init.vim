@@ -85,7 +85,6 @@ set foldlevelstart=20
 set mouse=a
 
 " a highlight on 80 character
-highlight ColorColumn ctermbg=gray
 set colorcolumn=80
 
 " set the height of the comand prompt window to 1

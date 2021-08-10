@@ -71,3 +71,10 @@ export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$HOME/.cargo/bin
 source "$HOME/.cargo/env"
 . "$HOME/.cargo/env"
+
+export BAT_THEME="Nord"
+export FZF_DEFAULT_OPTS="--ansi --preview-window 'right:60%' --preview 'bat --color=always --style=header,grid --line-range :300 --plain {}'"
+export PATH="/usr/local/opt/openjdk/bin:$PATH"
+
+# enable extglob
+shopt -s extglob

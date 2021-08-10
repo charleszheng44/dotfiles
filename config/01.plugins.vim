@@ -30,5 +30,10 @@ Plug 'cocopon/iceberg.vim'
 " fzf fuzzy file search
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'cespare/vim-toml'
+" plantuml preview
+Plug 'tyru/open-browser.vim'
+Plug 'weirongxu/plantuml-previewer.vim'
+Plug 'aklt/plantuml-syntax'
 
 call plug#end()
