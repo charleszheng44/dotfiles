@@ -20,6 +20,7 @@ alias gpl='git pull'
 alias gft='git fetch'
 alias grb='git rebase'
 alias gdif='git diff'
+alias gsw='git switch'
 alias gam='git add $(git ls-files -m)'
 alias gau='git add $(git ls-files -o)'
 
@@ -30,6 +31,7 @@ alias gb='goto_bookmark'
 alias db='delete_bookmark'
 
 alias r='ranger'
+alias tv='GO111MODULE=off vim'
 
 # aliases for Linux
 if [ "$(uname)" == "Linux" ];

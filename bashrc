@@ -68,6 +68,7 @@ export PATH=$PATH:/usr/local/go/bin
 export GOPATH=$HOME/Works/go
 export PATH=$PATH:$GOPATH/bin
 
+# rust related setting
 export PATH=$PATH:$HOME/.cargo/bin
 source "$HOME/.cargo/env"
 . "$HOME/.cargo/env"
@@ -78,3 +79,16 @@ export PATH="/usr/local/opt/openjdk/bin:$PATH"
 
 # enable extglob
 shopt -s extglob
+
+# Wasm
+export PATH=$PATH:/usr/local/wabt-1.0.24/bin
+## wasmtime
+export WASMTIME_HOME="$HOME/.wasmtime"
+export PATH="$WASMTIME_HOME/bin:$PATH"
+## wasmer
+export WASMER_DIR="/Users/admin/.wasmer"
+[ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"
+## lucet
+export PATH="/opt/lucet/bin:${PATH}"
+export LD_LIBRARY_PATH="/opt/lucet/lib:${LD_LIBRARY_PATH}"
+export DYLD_LIBRARY_PATH="/opt/lucet/lib:${DYLD_LIBRARY_PATH}"
