@@ -1,9 +1,10 @@
 alias tmux='tmux -2'
+alias t='tmux'
 alias ..='cd ..'
-alias ls='ls -G'
+alias ls='ls --color'
 alias o='open'
-alias t='TERM=screen-256color-bce tmux -2'
-alias tmux='TERM=screen-256color-bce tmux -2'
+# alias t='TERM=screen-256color-bce tmux -2'
+# alias tmux='TERM=screen-256color-bce tmux -2'
 alias vim='nvim'
 alias v='nvim'
 alias a='ag'
@@ -34,7 +35,7 @@ alias r='ranger'
 alias tv='GO111MODULE=off vim'
 
 # aliases for Linux
-if [ "$(uname)" == "Linux" ];
+if [[ "$(uname)" -eq "Linux" ]];
 then
     alias o='xdg-open'  
 fi

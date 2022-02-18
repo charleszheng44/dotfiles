@@ -14,7 +14,7 @@ list_bookmarks() {
 
 # add current dir to bookmarks
 add_bookmark() {
-    if [ "$1" == "" ];
+    if [ -z "$1" ];
     then
         echo "please specify a bookmark name"
         return 1
@@ -31,7 +31,7 @@ add_bookmark() {
     do
         read -r bm path <<< $line
         # if the bookmark exists, update it
-        if [ "$bm" == "$bookmark" ] 
+        if [[ "$bm" -eq "$bookmark" ]] 
         then
             sed -i "s|$path|$current_dir|g" $bookmarkfile
             return
@@ -43,7 +43,7 @@ add_bookmark() {
 
 # go to bookmark
 goto_bookmark() {
-    if [ "$1" == "" ];
+    if [ -z "$1" ];
     then
         echo "please specify a bookmark name"
         return 1
@@ -58,7 +58,7 @@ goto_bookmark() {
     do
         tmp_bookmark=$(echo $line | awk '{print $1}')
         tmp_path=$(echo $line | awk '{print $2}')
-        if [ "${tmp_bookmark}" == "${target_bookmark}" ]; 
+        if [[ "${tmp_bookmark}" == "${target_bookmark}" ]]; 
         then
             cd ${tmp_path}
             return
@@ -71,7 +71,7 @@ goto_bookmark() {
 
 # delete book bookmark
 delete_bookmark() {
-    if [ "$1" == "" ];
+    if [ -z "$1" ];
     then
         echo "please specify a bookmark name"
         return 1
