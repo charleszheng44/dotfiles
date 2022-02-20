@@ -53,6 +53,11 @@ colorscheme gruvbox
 highlight Normal ctermbg=NONE
 highlight Comment cterm=italic gui=italic
 
+" tokyonight setting
+" let g:tokyonight_style = "night"
+" let g:tokyonight_italic_functions = 1
+" let g:tokyonight_dark_sidebar = 1
+
 " Set buffer size large enough
 set maxmempattern=3000000
 

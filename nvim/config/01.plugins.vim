@@ -27,6 +27,7 @@ Plug 'gruvbox-community/gruvbox'
 Plug 'embark-theme/vim', {'as': 'embark'}
 Plug 'edkolev/tmuxline.vim'
 Plug 'cocopon/iceberg.vim'
+Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 " fzf fuzzy file search
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
