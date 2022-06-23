@@ -47,11 +47,12 @@ set pastetoggle=<F2>
 
 " set colorscheme
 syntax enable
-" set background=dark
+set background=dark
 set termguicolors 
-colorscheme nord
+colorscheme gruvbox
 highlight Normal ctermbg=NONE
 highlight Comment cterm=italic gui=italic
+
 
 " Set buffer size large enough
 set maxmempattern=3000000
@@ -95,3 +96,16 @@ augroup vagrant
   au!
   au BufRead,BufNewFile Vagrantfile set filetype=ruby
 augroup END
+
+" setup the lsp
+lua << EOF
+vim.lsp.handlers["textDocument/publishDiagnostics"] =
+    vim.lsp.with(
+    vim.lsp.diagnostic.on_publish_diagnostics,
+    {
+        underline = false,
+        virtual_text = false,
+        update_in_insert = false
+    }
+)
+EOF

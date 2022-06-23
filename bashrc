@@ -6,8 +6,9 @@ function parse_git_branch() {
 	BRANCH=`git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
 	if [ ! "${BRANCH}" == "" ]
     then
-		STAT=`parse_git_dirty`
-		echo "[${BRANCH}${STAT}]"
+		# STAT=`parse_git_dirty`
+		# echo "[${BRANCH}${STAT}]"
+		echo "[${BRANCH}]"
 	else
 		echo ""
 	fi
@@ -65,15 +66,15 @@ export BASH_SILENCE_DEPRECATION_WARNING=1
 
 # go related setting
 export PATH=$PATH:/usr/local/go/bin
-export GOPATH=$HOME/Works/go
-export PATH=$PATH:$GOPATH/bin
+# export GOPATH=$HOME/Works/go
+export PATH=$PATH:$HOME/go/bin
 
 # rust related setting
 export PATH=$PATH:$HOME/.cargo/bin
 source "$HOME/.cargo/env"
 . "$HOME/.cargo/env"
 
-export BAT_THEME="Nord"
+export BAT_THEME="gruvbox-dark"
 export FZF_DEFAULT_OPTS="--ansi --preview-window 'right:60%' --preview 'bat --color=always --style=header,grid --line-range :300 --plain {}'"
 export PATH="/usr/local/opt/openjdk/bin:$PATH"
 
@@ -88,7 +89,11 @@ export PATH="$WASMTIME_HOME/bin:$PATH"
 ## wasmer
 export WASMER_DIR="/Users/admin/.wasmer"
 [ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"
-## lucet
-export PATH="/opt/lucet/bin:${PATH}"
-export LD_LIBRARY_PATH="/opt/lucet/lib:${LD_LIBRARY_PATH}"
-export DYLD_LIBRARY_PATH="/opt/lucet/lib:${DYLD_LIBRARY_PATH}"
+
+# osx related
+export PATH="$(brew --prefix)/opt/gnu-sed/libexec/gnubin:$PATH"
+
+# enable the z command
+source /usr/local/etc/profile.d/z.sh
+
+export PATH=$HOME/.tiup/bin:$PATH

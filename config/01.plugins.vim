@@ -9,7 +9,7 @@ endif
 call plug#begin('~/.config/nvim/plugged')    
 
 " language support
-Plug 'fatih/vim-go'
+Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries'} 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " rust lang support
 Plug 'rust-lang/rust.vim'
@@ -27,6 +27,7 @@ Plug 'gruvbox-community/gruvbox'
 Plug 'embark-theme/vim', {'as': 'embark'}
 Plug 'edkolev/tmuxline.vim'
 Plug 'cocopon/iceberg.vim'
+Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 " fzf fuzzy file search
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'

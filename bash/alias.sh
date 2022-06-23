@@ -31,7 +31,7 @@ alias gb='goto_bookmark'
 alias db='delete_bookmark'
 
 alias r='ranger'
-alias tv='GO111MODULE=off vim'
+alias tv='GO111MODULE=off GOFLAGS=-mod=vendor vim'
 
 # aliases for Linux
 if [ "$(uname)" == "Linux" ];
