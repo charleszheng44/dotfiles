@@ -2,6 +2,7 @@ window:
   padding:
     x: 5
     y: 5
+  opacity: 0.9
 scrolling:
   history: 10000
   multiplier: 3
@@ -24,7 +25,6 @@ font:
     x: 1
     y: 1
 draw_bold_text_with_bright_colors: false
-background_opacity: 0.9
 
 cursor:
   style:

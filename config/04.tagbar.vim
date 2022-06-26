@@ -28,4 +28,4 @@ let g:tagbar_type_go = {
 \ }
 
 " shortcut for opening tagbar
-map <C-m> :Tagbar<CR>
+map <C-k> :Tagbar<CR>
