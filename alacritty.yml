@@ -240,4 +240,4 @@ schemes:
       cyan: '#a4ffff'
       white: '#ffffff'
 
-colors: *gruvbox_dark
+colors: *nord

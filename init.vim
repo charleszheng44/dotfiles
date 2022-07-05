@@ -1,3 +1,4 @@
+
 for f in split(glob('~/.config/nvim/config/*.vim'), '\n')
     exe 'source' f
 endfor 
@@ -29,6 +30,8 @@ set autowrite
 set hidden
 " show line number
 set number
+" highlight the current line
+set cursorline
 " mv swap to this file
 set backupdir=~/tmp
 " set up markdown syntax highlighting 
@@ -49,10 +52,9 @@ set pastetoggle=<F2>
 syntax enable
 set background=dark
 set termguicolors 
-colorscheme gruvbox
+colorscheme nordfox
 highlight Normal ctermbg=NONE
 highlight Comment cterm=italic gui=italic
-
 
 " Set buffer size large enough
 set maxmempattern=3000000

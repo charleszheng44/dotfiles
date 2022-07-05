@@ -36,5 +36,6 @@ Plug 'cespare/vim-toml'
 Plug 'tyru/open-browser.vim'
 Plug 'weirongxu/plantuml-previewer.vim'
 Plug 'aklt/plantuml-syntax'
+Plug 'EdenEast/nightfox.nvim'
 
 call plug#end()

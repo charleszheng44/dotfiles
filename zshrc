@@ -22,6 +22,7 @@ plugins=(
     history
     jsontools
     zsh-z
+    kubectl
     # plugins for macos:
     macos 
 )
@@ -41,7 +42,7 @@ export PATH=/usr/local/go/bin:$PATH
 export PATH=$HOME/go/bin:$PATH
 
 # Bat setup
-export BAT_THEME=gruvbox-dark
+export BAT_THEME=Nord
 
 # Python setup
 export PATH=$HOME/Library/Python/3.8/bin:$PATH
