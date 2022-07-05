@@ -37,5 +37,6 @@ Plug 'tyru/open-browser.vim'
 Plug 'weirongxu/plantuml-previewer.vim'
 Plug 'aklt/plantuml-syntax'
 Plug 'EdenEast/nightfox.nvim'
+Plug 'ryanoasis/vim-devicons'
 
 call plug#end()

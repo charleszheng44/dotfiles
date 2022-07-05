@@ -111,3 +111,5 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] =
     }
 )
 EOF
+
+set encoding=UTF-8
