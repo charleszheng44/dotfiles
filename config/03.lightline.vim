@@ -1,6 +1,6 @@
 " lightline setup
 let g:lightline = {
-      \ 'colorscheme': 'nordfox',
+      \ 'colorscheme': 'nord',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]

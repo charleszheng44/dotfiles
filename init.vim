@@ -51,8 +51,8 @@ set pastetoggle=<F2>
 " set colorscheme
 syntax enable
 set background=dark
-set termguicolors 
-colorscheme nordfox
+" set termguicolors 
+colorscheme nord
 highlight Normal ctermbg=NONE
 highlight Comment cterm=italic gui=italic
 
@@ -111,5 +111,3 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] =
     }
 )
 EOF
-
-set encoding=UTF-8
