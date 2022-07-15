@@ -46,3 +46,5 @@ export BAT_THEME=Nord
 
 # Python setup
 export PATH=$HOME/Library/Python/3.8/bin:$PATH
+
+source $HOME/Works/dotfiles/zsh/kubectl_alias.sh
