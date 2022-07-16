@@ -48,3 +48,9 @@ export BAT_THEME=Nord
 export PATH=$HOME/Library/Python/3.8/bin:$PATH
 
 source $HOME/Works/dotfiles/zsh/kubectl_alias.sh
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/zc/opt/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/zc/opt/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/zc/opt/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/zc/opt/google-cloud-sdk/completion.zsh.inc'; fi
