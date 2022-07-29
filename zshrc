@@ -55,3 +55,8 @@ if [ -f '/Users/zc/opt/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/zc/opt/g
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/zc/opt/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/zc/opt/google-cloud-sdk/completion.zsh.inc'; fi
+
+# eks provider dev alias
+function en() {
+    GOFLAGS="-tags=e2e" nvim $@
+}
