@@ -60,3 +60,6 @@ if [ -f '/Users/zc/opt/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/zc
 function en() {
     GOFLAGS="-tags=e2e" nvim $@
 }
+
+# krew
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"

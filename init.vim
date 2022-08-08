@@ -93,6 +93,9 @@ set colorcolumn=80
 " set the height of the comand prompt window to 1
 set cmdheight=1
 
+" copy to system clipboard
+set clipboard=unnamedplus
+
 " syntax highlight for vagrant file
 augroup vagrant
   au!
