@@ -35,8 +35,9 @@ eval "$(starship init zsh)"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # user defined aliases
-alias ls='ls --color'
+# alias ls='ls --color'
 alias kct='kubectx'
+alias ls='exa';
 
 # Go setup
 export PATH=/usr/local/go/bin:$PATH
