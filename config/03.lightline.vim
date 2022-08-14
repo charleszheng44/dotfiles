@@ -5,8 +5,11 @@ let g:lightline = {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
       \ },
-      \'component': {
-      \     'charvaluehex': '0x%B'
+      \ 'component': {
+      \   'charvaluehex': '0x%B'
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'gitbranch#name'
       \ },
       \ }
 let g:lightline.separator = {

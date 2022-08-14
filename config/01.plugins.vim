@@ -15,10 +15,10 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'rust-lang/rust.vim'
 " vim tool
 Plug 'itchyny/lightline.vim'
+Plug 'itchyny/vim-gitbranch'
 Plug 'vim-scripts/taglist.vim'
 Plug 'majutsushi/tagbar'
 Plug 'scrooloose/nerdtree'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 " tagbar
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'romgrk/barbar.nvim'
