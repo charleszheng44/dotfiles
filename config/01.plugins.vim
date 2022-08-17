@@ -18,8 +18,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'itchyny/vim-gitbranch'
 Plug 'vim-scripts/taglist.vim'
 Plug 'majutsushi/tagbar'
-Plug 'scrooloose/nerdtree'
-" tagbar
+Plug 'kyazdani42/nvim-tree.lua'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'romgrk/barbar.nvim'
 " colorscheme
