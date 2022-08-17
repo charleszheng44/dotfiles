@@ -30,8 +30,10 @@ Plug 'gruvbox-community/gruvbox'
 Plug 'embark-theme/vim', {'as': 'embark'}
 Plug 'edkolev/tmuxline.vim'
 Plug 'cocopon/iceberg.vim'
+Plug 'arzg/vim-colors-xcode'
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'frenzyexists/aquarium-vim', { 'branch': 'develop' }
+Plug 'haishanh/night-owl.vim'
 " fzf fuzzy file search
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
