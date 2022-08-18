@@ -22,6 +22,7 @@ Plug 'kyazdani42/nvim-web-devicons'
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-lualine/lualine.nvim'
+Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }
 " colorscheme
 Plug 'arcticicestudio/nord-vim'
 Plug 'dracula/vim', { 'as': 'dracula' }
