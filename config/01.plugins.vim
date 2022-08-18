@@ -14,13 +14,14 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " rust lang support
 Plug 'rust-lang/rust.vim'
 " vim tool
-Plug 'itchyny/lightline.vim'
 Plug 'itchyny/vim-gitbranch'
 Plug 'vim-scripts/taglist.vim'
 Plug 'majutsushi/tagbar'
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'kyazdani42/nvim-web-devicons'
-Plug 'romgrk/barbar.nvim'
+Plug 'lukas-reineke/indent-blankline.nvim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-lualine/lualine.nvim'
 " colorscheme
 Plug 'arcticicestudio/nord-vim'
 Plug 'dracula/vim', { 'as': 'dracula' }
@@ -32,6 +33,7 @@ Plug 'cocopon/iceberg.vim'
 Plug 'arzg/vim-colors-xcode'
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'frenzyexists/aquarium-vim', { 'branch': 'develop' }
+Plug 'EdenEast/nightfox.nvim'
 Plug 'haishanh/night-owl.vim'
 " fzf fuzzy file search
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -41,7 +43,6 @@ Plug 'cespare/vim-toml'
 Plug 'tyru/open-browser.vim'
 Plug 'weirongxu/plantuml-previewer.vim'
 Plug 'aklt/plantuml-syntax'
-Plug 'EdenEast/nightfox.nvim'
 Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
