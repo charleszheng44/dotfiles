@@ -2,5 +2,5 @@ lua <<EOF
 require'hop'.setup()
 EOF
 
-nnoremap <S-w> :HopWord<CR>
-nnoremap <S-l> :HopLine<CR>
+nnoremap <C-a> :HopWord<CR>
+nnoremap <C-s> :HopLine<CR>
