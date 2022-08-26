@@ -24,6 +24,7 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }
 Plug 'phaazon/hop.nvim'
+Plug 'romainl/vim-cool'
 " colorscheme
 Plug 'arcticicestudio/nord-vim'
 Plug 'dracula/vim', { 'as': 'dracula' }
@@ -37,6 +38,7 @@ Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'frenzyexists/aquarium-vim', { 'branch': 'develop' }
 Plug 'EdenEast/nightfox.nvim'
 Plug 'haishanh/night-owl.vim'
+Plug 'drewtempelmeyer/palenight.vim'
 " fzf fuzzy file search
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
