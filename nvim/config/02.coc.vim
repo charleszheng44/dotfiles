@@ -160,7 +160,14 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
-let g:coc_node_path = '/opt/homebrew/bin/node'
+if has('unix')
+    let g:coc_node_path = '/usr/bin/node'
+endif
+
+if has('macunix') 
+    let g:coc_node_path = '/opt/homebrew/bin/node'
+endif
+
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 inoremap <silent><expr> <C-x><C-z> coc#pum#visible() ? coc#pum#stop() : "\<C-x>\<C-z>"
 " remap for complete to use tab and <cr>

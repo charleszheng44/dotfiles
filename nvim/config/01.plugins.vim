@@ -26,6 +26,7 @@ Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }
 Plug 'phaazon/hop.nvim'
 Plug 'romainl/vim-cool'
 " colorscheme
+Plug 'catppuccin/nvim', {'as': 'catppuccin'}
 Plug 'arcticicestudio/nord-vim'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'jacoborus/tender.vim'

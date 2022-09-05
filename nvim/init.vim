@@ -52,7 +52,7 @@ set pastetoggle=<F2>
 syntax enable
 set background=dark
 set termguicolors 
-colorscheme nord
+colorscheme catppuccin
 highlight Normal ctermbg=NONE
 highlight Comment cterm=italic gui=italic
 
