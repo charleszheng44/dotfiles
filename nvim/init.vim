@@ -52,7 +52,7 @@ set pastetoggle=<F2>
 syntax enable
 set background=dark
 set termguicolors 
-colorscheme catppuccin
+colorscheme catppuccin 
 highlight Normal ctermbg=NONE
 highlight Comment cterm=italic gui=italic
 
@@ -93,21 +93,6 @@ set colorcolumn=80
 " set the height of the comand prompt window to 1
 set cmdheight=1
 
-" Workaround for neovim wl-clipboard and netrw interaction hang 
-" (see: https://github.com/neovim/neovim/issues/6695 and
-" https://github.com/neovim/neovim/issues/9806) 
-let g:clipboard = {
-      \   'name': 'myClipboard',
-      \   'copy': {
-      \      '+': 'wl-copy',
-      \      '*': 'wl-copy',
-      \    },
-      \   'paste': {
-      \      '+': 'wl-paste -o',
-      \      '*': 'wl-paste -o',
-      \   },
-      \   'cache_enabled': 0,
-      \ }
 " copy to system clipboard
 set clipboard+=unnamedplus
 

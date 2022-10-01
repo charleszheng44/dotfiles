@@ -20,6 +20,7 @@ then
     # Python setup
     export PATH=$HOME/Library/Python/3.8/bin:$PATH
 fi
+export PATH=$HOME/.local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -58,11 +59,13 @@ alias ls='exa';
 alias nv='nvim'
 
 # Go setup
-export PATH=/usr/local/go/bin:$PATH
-export PATH=$HOME/go/bin:$PATH
+# export PATH=/usr/local/go/bin:$PATH
+# export PATH=$HOME/go/bin:$PATH
+export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:$(go env GOPATH)/bin
 
 # Bat setup
-export BAT_THEME=Nord
+export BAT_THEME=Catppuccin-mocha
 
 source $HOME/Works/dotfiles/zsh/kubectl_alias.sh
 
@@ -73,3 +76,10 @@ function en() {
 
 # krew
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+
+# set the default editor
+export EDITOR='nvim'
+export VISUAL='nvim'
+
+# set the AWS profile
+export AWS_PROFILE=dbaas-dev

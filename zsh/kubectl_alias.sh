@@ -18,6 +18,9 @@ kc() {
             shift
             kubectl describe $@
             ;;
+        "ci" )
+            shift
+            kubectl cluster-info $@
         *)
             kubectl $@
             ;;
