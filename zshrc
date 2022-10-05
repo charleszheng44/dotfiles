@@ -57,6 +57,8 @@ eval "$(starship init zsh)"
 alias kct='kubectx'
 alias ls='exa';
 alias nv='nvim'
+alias tmux='TERM=xterm-256color tmux'
+alias t='tmux'
 
 # Go setup
 # export PATH=/usr/local/go/bin:$PATH

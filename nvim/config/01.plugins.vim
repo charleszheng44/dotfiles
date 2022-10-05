@@ -22,6 +22,7 @@ Plug 'kyazdani42/nvim-web-devicons'
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-lualine/lualine.nvim'
+Plug 'itchyny/lightline.vim'
 Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }
 Plug 'phaazon/hop.nvim'
 Plug 'romainl/vim-cool'
