@@ -9,18 +9,18 @@ scrolling:
 
 font:
   normal:
-    family: Ubuntu Mono derivative Powerline
+    family: Ubuntu Mono Nerd Font 
     style: Regular
   bold:
-    family: Ubuntu Mono derivative Powerline
+    family: Ubuntu Mono Nerd Font
     style: Bold
   italic:
-    family: Ubuntu Mono derivative Powerline
+    family: Ubuntu Mono Nerd Font
     style: Italic
   bold_italic:
-    family: Ubuntu Mono derivative Powerline
+    family: Ubuntu Mono Nerd Font
     style: Bold Italic
-  size: 18
+  size: 14
   offset:
     x: 1
     y: 1
@@ -156,7 +156,7 @@ schemes:
       matches:
         foreground: CellBackground
         background: '#88c0d0'
-      bar:
+      footer_bar:
         background: '#434c5e'
         foreground: '#d8dee9'
     normal:
@@ -240,4 +240,5 @@ schemes:
       cyan: '#a4ffff'
       white: '#ffffff'
 
-colors: *nord
+import:
+  - ~/.config/alacritty/catppuccin/catppuccin-mocha.yml
