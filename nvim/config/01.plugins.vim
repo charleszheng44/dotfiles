@@ -49,5 +49,7 @@ Plug 'tyru/open-browser.vim'
 Plug 'weirongxu/plantuml-previewer.vim'
 Plug 'aklt/plantuml-syntax'
 Plug 'ryanoasis/vim-devicons'
+" python lang support
+Plug 'psf/black', { 'branch': 'stable' }
 
 call plug#end()

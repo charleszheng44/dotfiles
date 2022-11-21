@@ -61,15 +61,17 @@ alias nv='nvim'
 export PATH=/usr/local/go/bin:$PATH
 export PATH=$HOME/go/bin:$PATH
 
+# Rust setup
+export PATH=$HOME/.cargo/bin:$PATH
+
 # Bat setup
 export BAT_THEME=Nord
 
 source $HOME/Works/dotfiles/zsh/kubectl_alias.sh
 
-# eks provider dev alias
-function en() {
-    GOFLAGS="-tags=e2e" nvim $@
-}
+export EDITOR=nvim
 
 # krew
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+
+autoload -U compinit && compinit

@@ -20,7 +20,7 @@ font:
   bold_italic:
     family: Ubuntu Mono Nerd Font
     style: Bold Italic
-  size: 14
+  size: 15
   offset:
     x: 1
     y: 1
@@ -39,6 +39,7 @@ key_bindings:
   - { key: B, mods: Alt, chars: "\x1bb" }
   - { key: F, mods: Alt, chars: "\x1bf" }
   - { key: D, mods: Alt, chars: "\x1bd" }
+  - { key: F11, action: ToggleFullscreen }
 
 import:
 - dracula.yml
