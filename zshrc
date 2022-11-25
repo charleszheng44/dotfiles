@@ -65,7 +65,7 @@ export PATH=$HOME/go/bin:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
 
 # Bat setup
-export BAT_THEME=Nord
+export BAT_THEME=Catppuccin-macchiato
 
 source $HOME/Works/dotfiles/zsh/kubectl_alias.sh
 

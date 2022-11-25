@@ -7,9 +7,6 @@
       "filetypes": ["go"]
     }
   },
-  "python.formatting.blackPath":"~/.local/bin/black",
-  "python.formatting.provider":"black",
-  "python.formatting.blackArgs":["--line-length", 80],
   "python.linting.pytypeEnabled": true,
   "python.linting.pycodestyleEnabled": true,
 }
