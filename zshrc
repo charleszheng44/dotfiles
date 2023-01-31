@@ -56,6 +56,7 @@ eval "$(starship init zsh)"
 alias kct='kubectx'
 alias ls='exa';
 alias nv='nvim'
+alias gch='git checkout'
 
 # Go setup
 export PATH=/usr/local/go/bin:$PATH

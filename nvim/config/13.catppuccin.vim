@@ -1,4 +1,4 @@
-let g:catppuccin_flavour = "macchiato"
+let g:catppuccin_flavour = "mocha"
 lua << EOF
 require("catppuccin").setup({
     term_colors = false,

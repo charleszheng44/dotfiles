@@ -52,7 +52,7 @@ syntax enable
 set background=dark
 set termguicolors 
 colorscheme catppuccin
-highlight Normal ctermbg=NONE
+highlight Normal ctermbg=NONE guibg=NONE
 highlight Comment cterm=italic gui=italic
 
 " Set buffer size large enough
