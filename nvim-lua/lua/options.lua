@@ -26,7 +26,6 @@ vim.opt.pastetoggle = '<F2>'
 
 vim.opt.background = 'dark'
 vim.opt.termguicolors = true
--- colorscheme oxocarbon
 vim.cmd[[highlight Normal ctermbg=NONE]]
 vim.cmd[[highlight Comment cterm=italic gui=italic]]
 
