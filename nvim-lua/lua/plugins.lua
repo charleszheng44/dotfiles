@@ -33,15 +33,11 @@ local plugins = {
   -- 'saadparwaiz1/cmp_luasnip',
   -- 'rafamadriz/friendly-snippets',
   'github/copilot.vim',
-  -- 'williamboman/mason.nvim',
-  -- 'neovim/nvim-lspconfig',
-  -- 'williamboman/mason-lspconfig.nvim',
+  'williamboman/mason.nvim',
+  'neovim/nvim-lspconfig',
+  'williamboman/mason-lspconfig.nvim',
   -- 'glepnir/lspsaga.nvim',
-  -- {
-  --     'nvim-telescope/telescope.nvim',
-  --     dependencies = { {'nvim-lua/plenary.nvim'} }
-  -- }
-  --
+  
   {
     'nvim-telescope/telescope.nvim', tag = '0.1.1',
     dependencies = { 'nvim-lua/plenary.nvim' }

@@ -19,3 +19,4 @@ require("nvim-tree").setup {
 vim.keymap.set('', '<C-n>', ':NvimTreeToggle<CR>')
 vim.keymap.set('', '<Leader>f', ':NvimTreeFindFile<CR>')
 vim.keymap.set('', '<Leader>c', ':NvimTreeCollapse<CR>')
+vim.cmd[[autocmd Colorscheme * highlight NvimTreeNormal guibg=#1b1c1c]]
