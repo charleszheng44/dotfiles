@@ -19,7 +19,7 @@ local plugins = {
   'lewis6991/gitsigns.nvim',
   'preservim/vimux',
   {
-    'phaazon/hop.nvim', 
+    'phaazon/hop.nvim',
     branch = 'v2'
   },
   "lukas-reineke/indent-blankline.nvim",
@@ -27,11 +27,13 @@ local plugins = {
   'simrat39/rust-tools.nvim',
 
   -- completion
-  -- 'hrsh7th/nvim-cmp',
-  -- 'hrsh7th/cmp-nvim-lsp',
-  -- 'L3MON4D3/LuaSnip',
-  -- 'saadparwaiz1/cmp_luasnip',
-  -- 'rafamadriz/friendly-snippets',
+  'hrsh7th/nvim-cmp',
+  'hrsh7th/cmp-nvim-lsp',
+  {
+      'L3MON4D3/LuaSnip',
+      dependencies = { 'rafamadriz/friendly-snippets' }
+  },
+  'saadparwaiz1/cmp_luasnip',
   'github/copilot.vim',
   'williamboman/mason.nvim',
   'neovim/nvim-lspconfig',
