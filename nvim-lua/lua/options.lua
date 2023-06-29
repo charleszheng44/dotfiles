@@ -24,10 +24,9 @@ vim.opt.expandtab = true
 -- unformat paste
 vim.opt.pastetoggle = '<F2>'
 
-vim.opt.background = 'dark'
-vim.opt.termguicolors = true
-vim.cmd[[highlight Normal ctermbg=NONE]]
-vim.cmd[[highlight Comment cterm=italic gui=italic]]
+vim.cmd[[colorscheme carbonfox]]
+-- use the terminal background
+vim.cmd[[hi Normal ctermbg=none guibg=none]]
 
 -- set buffer size large enough
 vim.opt.maxmempattern = 3000000

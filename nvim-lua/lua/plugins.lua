@@ -18,20 +18,24 @@ local plugins = {
   'nvim-treesitter/nvim-treesitter',
   'lewis6991/gitsigns.nvim',
   'preservim/vimux',
+  'glepnir/lspsaga.nvim',
   {
     'phaazon/hop.nvim',
     branch = 'v2'
   },
   "lukas-reineke/indent-blankline.nvim",
-
   'simrat39/rust-tools.nvim',
+  {
+    'akinsho/bufferline.nvim',
+    version = "*"
+  },
 
   -- completion
   'hrsh7th/nvim-cmp',
   'hrsh7th/cmp-nvim-lsp',
   {
-      'L3MON4D3/LuaSnip',
-      dependencies = { 'rafamadriz/friendly-snippets' }
+    'L3MON4D3/LuaSnip',
+    dependencies = { 'rafamadriz/friendly-snippets' }
   },
   'saadparwaiz1/cmp_luasnip',
   'github/copilot.vim',
@@ -45,7 +49,8 @@ local plugins = {
     dependencies = { 'nvim-lua/plenary.nvim' }
   },
   -- colorschemes
-  "nyoom-engineering/oxocarbon.nvim"
+  'nyoom-engineering/oxocarbon.nvim',
+  'EdenEast/nightfox.nvim' 
 }
 
 local opts = {}

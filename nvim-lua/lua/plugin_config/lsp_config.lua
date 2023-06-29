@@ -5,10 +5,10 @@ require('mason-lspconfig').setup {
 
 local on_attach = function(_, _) 
     local opts = { noremap = true, silent = true }
-    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
+    vim.keymap.set('n', 'gd', '<cmd>Lspsaga goto_definition<CR>', opts)
     vim.keymap.set('n', 'gi', require('telescope.builtin').lsp_implementations, opts)
     vim.keymap.set('n', 'gr', require('telescope.builtin').lsp_references, opts)
-    vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
+    vim.keymap.set('n', 'K', '<cmd>Lspsaga hover_doc<cr>', {})
 end
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
@@ -25,3 +25,16 @@ require('lspconfig').gopls.setup {
     on_attach = on_attach,
     capabilities = capabilities
 }
+
+require('lspsaga').setup {
+  code_action_icon = "💡",
+  symbol_in_winbar = {
+    in_custom = false,
+    enable = true,
+    separator = ' ',
+    show_file = true,
+    file_formatter = ""
+  },
+}
+
+vim.keymap.set('n','<C-k>', '<cmd>Lspsaga outline<CR>', {silent = true})
