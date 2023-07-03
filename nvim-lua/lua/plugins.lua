@@ -42,15 +42,14 @@ local plugins = {
   'williamboman/mason.nvim',
   'neovim/nvim-lspconfig',
   'williamboman/mason-lspconfig.nvim',
-  -- 'glepnir/lspsaga.nvim',
-  
+
   {
     'nvim-telescope/telescope.nvim', tag = '0.1.1',
     dependencies = { 'nvim-lua/plenary.nvim' }
   },
   -- colorschemes
   'nyoom-engineering/oxocarbon.nvim',
-  'EdenEast/nightfox.nvim' 
+  'EdenEast/nightfox.nvim'
 }
 
 local opts = {}

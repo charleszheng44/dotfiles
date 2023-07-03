@@ -47,3 +47,6 @@ vim.opt.cmdheight = 1
 
 -- copy to system clipboard
 vim.opt.clipboard = 'unnamedplus'
+
+-- auto format before existing
+vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
