@@ -10,6 +10,9 @@ local on_attach = function(_, _)
     vim.keymap.set('n', 'gr', require('telescope.builtin').lsp_references, opts)
     vim.keymap.set('n', 'K', '<cmd>Lspsaga hover_doc<cr>', {})
     vim.keymap.set('n', 'F', '<cmd>lua vim.lsp.buf.format()<cr>', opts)
+    vim.keymap.set('n', '<C-k>', '<cmd>Lspsaga outline<CR>', { silent = true })
+    vim.keymap.set('n', 'O', '<cmd>Lspsaga outgoing_calls<CR>', { silent = true })
+    vim.keymap.set('n', 'I', '<cmd>Lspsaga incoming_calls<CR>', { silent = true })
 end
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
@@ -32,7 +35,16 @@ require('lspconfig').rust_analyzer.setup {
 }
 require('lspconfig').gopls.setup {
     on_attach = on_attach,
-    capabilities = capabilities
+    capabilities = capabilities,
+    settings = {
+        gopls = {
+            completeUnimported = true,
+            usePlaceholders = true,
+            analyses = {
+                unusedparams = true
+            },
+        },
+    }
 }
 
 require('lspsaga').setup {
@@ -44,6 +56,12 @@ require('lspsaga').setup {
         show_file = true,
         file_formatter = ""
     },
+    outline = {
+        auto_preview = false,
+        keys = {
+            toggle_or_jump = 'o',
+            quit = 'q',
+            jump = 'e'
+        }
+    }
 }
-
-vim.keymap.set('n', '<C-k>', '<cmd>Lspsaga outline<CR>', { silent = true })
