@@ -57,7 +57,7 @@ require('lspsaga').setup {
         file_formatter = ""
     },
     outline = {
-        auto_preview = false,
+        -- auto_preview = false,
         keys = {
             toggle_or_jump = 'o',
             quit = 'q',

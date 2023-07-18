@@ -116,3 +116,4 @@ alias gco='fzf-git-checkout'
 autoload -U compinit && compinit
 
 export PATH=/home/zc/.tiup/bin:$PATH
+export OPENAI_API_KEY="$(cat $HOME/.secrets/openai)"
