@@ -1,3 +1,5 @@
+export SHELL=$(which zsh)
+
 if [[ $(uname) == "Darwin" ]]
 then
     # If you come from bash you might have to change your $PATH.
@@ -38,7 +40,7 @@ plugins=(
     dirhistory
     history
     jsontools
-    zsh-z
+    z
     kubectl
     # plugins for macos:
     macos 
@@ -68,10 +70,7 @@ export PATH=$HOME/.cargo/bin:$PATH
 # local bin setup
 export PATH=$HOME/.local/bin:$PATH
 
-# Bat setup
-export BAT_THEME=Catppuccin-macchiato
-
-source $HOME/Works/dotfiles/zsh/kubectl_alias.sh
+source $HOME/.zsh/kubectl_alias.sh
 
 export EDITOR=nvim
 
