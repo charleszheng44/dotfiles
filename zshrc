@@ -51,6 +51,18 @@ source $ZSH/oh-my-zsh.sh
 # launch the starship
 eval "$(starship init zsh)"
 
+export FZF_DEFAULT_OPTS="--multi \
+--height=50% \
+--margin=1%,1%,1%,1% \
+--layout=reverse-list \
+--border=rounded \
+--info=inline \
+--prompt='$>' \
+--pointer='→' \
+--marker='♡' \
+--header='CTRL-c or ESC to quit' \
+--color='dark,fg:magenta'"
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # user defined aliases
