@@ -24,7 +24,7 @@ vim.opt.expandtab = true
 -- unformat paste
 vim.opt.pastetoggle = '<F2>'
 
-vim.cmd [[colorscheme terafox]]
+vim.cmd [[colorscheme nightfox]]
 -- use the terminal background
 vim.cmd [[hi Normal ctermbg=none guibg=none]]
 
