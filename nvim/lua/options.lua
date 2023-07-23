@@ -25,8 +25,11 @@ vim.opt.expandtab = true
 vim.opt.pastetoggle = '<F2>'
 
 vim.cmd [[colorscheme nightfox]]
+vim.o.termguicolors = true
+vim.o.background = "dark"
+
 -- use the terminal background
-vim.cmd [[hi Normal ctermbg=none guibg=none]]
+-- vim.cmd [[hi Normal ctermbg=none guibg=none]]
 
 -- set buffer size large enough
 vim.opt.maxmempattern = 3000000

@@ -1,3 +1,5 @@
-require("bufferline").setup{
-    options = { seperator_style = 'slope'}
+require("bufferline").setup {
+    options = {
+        separator_style = 'slant',
+    }
 }
