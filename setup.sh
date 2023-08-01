@@ -4,6 +4,11 @@ set -e
 
 CONFIG_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
+# setup alacritty
+[ -d ~/.config/alacritty ] && rm -rf ~/.config/alacritty
+[ -L ~/.config/alacritty ] && rm ~/.config/alacritty
+ln -s $CONFIG_DIR/alacritty ~/.config/alacritty
+
 # setup zshrc
 [ -f ~/.zshrc ] && rm ~/.zshrc
 [ -L ~/.zshrc ] && rm ~/.zshrc
