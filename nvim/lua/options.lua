@@ -24,7 +24,7 @@ vim.opt.expandtab = true
 -- unformat paste
 vim.opt.pastetoggle = '<F2>'
 
-vim.cmd [[colorscheme nightfox]]
+vim.cmd [[colorscheme catppuccin-mocha]]
 vim.o.termguicolors = true
 vim.o.background = "dark"
 

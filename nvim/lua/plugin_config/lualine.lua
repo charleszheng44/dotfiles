@@ -1,3 +1,3 @@
 require('lualine').setup {
-    options = { theme = 'terafox' }
+    options = { theme = 'catppuccin-mocha' }
 }
