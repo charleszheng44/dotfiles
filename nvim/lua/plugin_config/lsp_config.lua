@@ -1,6 +1,6 @@
 require('mason').setup()
 require('mason-lspconfig').setup {
-    ensure_installed = { 'lua_ls', 'rust_analyzer', 'gopls' },
+    ensure_installed = { 'lua_ls', 'rust_analyzer', 'gopls', 'jdtls', 'pyright' },
 }
 
 local on_attach = function(_, _)
@@ -45,6 +45,15 @@ require('lspconfig').gopls.setup {
             },
         },
     }
+}
+require('lspconfig').jdtls.setup {
+    on_attach = on_attach,
+    capabilities = capabilities
+}
+
+require('lspconfig').pyright.setup {
+    on_attach = on_attach,
+    capabilities = capabilities
 }
 
 require('lspsaga').setup {

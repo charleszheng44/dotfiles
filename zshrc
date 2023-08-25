@@ -3,24 +3,21 @@ export SHELL=$(which zsh)
 if [[ $(uname) == "Darwin" ]]
 then
     # If you come from bash you might have to change your $PATH.
-    export PATH=$HOME/bin:/usr/local/bin:/opt/homebrew/bin:$PATH
+    export PATH=/usr/local/bin:/opt/homebrew/bin:$PATH
     # use gnu core commands with their normal names
     export PATH=$(brew --prefix)/opt/coreutils/libexec/gnubin:$PATH
 
     # The next line updates PATH for the Google Cloud SDK.
-    if [ -f '/Users/zc/opt/google-cloud-sdk/path.zsh.inc' ]
+    if [ -f '/Users/${USER}/opt/google-cloud-sdk/path.zsh.inc' ]
     then 
-        . '/Users/zc/opt/google-cloud-sdk/path.zsh.inc'
+        . '/Users/${USER}/opt/google-cloud-sdk/path.zsh.inc'
     fi
 
     # The next line enables shell command completion for gcloud.
-    if [ -f '/Users/zc/opt/google-cloud-sdk/completion.zsh.inc' ]
+    if [ -f '/Users/${USER}/opt/google-cloud-sdk/completion.zsh.inc' ]
     then 
-        . '/Users/zc/opt/google-cloud-sdk/completion.zsh.inc'
+        . '/Users/${USER}/opt/google-cloud-sdk/completion.zsh.inc'
     fi
-
-    # Python setup
-    export PATH=$HOME/Library/Python/3.8/bin:$PATH
 fi
 
 # Path to your oh-my-zsh installation.
@@ -67,10 +64,25 @@ export FZF_DEFAULT_OPTS="--multi \
 
 # user defined aliases
 # alias ls='ls --color'
-alias kct='kubectx'
 alias ls='exa';
 alias nv='nvim'
 alias gch='git checkout'
+alias kustomize='kubectl kustomize'
+alias kct='kubectl ctx'
+alias kns='kubectl ns'
+alias bat='bat --theme="Catppuccin-mocha"'
+go() {
+    if [ $1 = "doc" ]; then
+        shift
+        command go doc $@ | bat -l go --style=plain 
+    else
+        command go "$@"
+    fi
+}
+
+
+# Local bin setup
+export PATH=$HOME/.local/bin:$PATH
 
 # Go setup
 export PATH=/usr/local/go/bin:$PATH
@@ -79,9 +91,14 @@ export PATH=$HOME/go/bin:$PATH
 # Rust setup
 export PATH=$HOME/.cargo/bin:$PATH
 
-# local bin setup
-export PATH=$HOME/.local/bin:$PATH
+# Java setup for osx
+if [[ $(uname) == "Darwin" ]]
+then
+    export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+    export CPPFLAGS="-I/opt/homebrew/opt/openjdk/include"
+fi
 
+# kubectl shortcuts
 source $HOME/.zsh/kubectl_alias.sh
 
 export EDITOR=nvim
@@ -126,5 +143,9 @@ alias gco='fzf-git-checkout'
 
 autoload -U compinit && compinit
 
-export PATH=/home/zc/.tiup/bin:$PATH
 export OPENAI_API_KEY="$(cat $HOME/.secrets/openai)"
+
+# nvm setup
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
