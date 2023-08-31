@@ -34,8 +34,8 @@ vim.o.background = "dark"
 -- set buffer size large enough
 vim.opt.maxmempattern = 3000000
 
--- fold function by syntax
-vim.opt.foldmethod = "syntax"
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 -- don't fold when open a new file
 vim.opt.foldlevelstart = 20
 

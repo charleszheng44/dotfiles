@@ -69,7 +69,10 @@ local plugins = {
         "catppuccin/nvim",
         name = "catppuccin",
         priority = 1000
-    }
+    },
+
+    -- language specific
+    'psf/black'
 }
 
 local opts = {}
