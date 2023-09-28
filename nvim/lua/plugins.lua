@@ -72,7 +72,11 @@ local plugins = {
     },
 
     -- language specific
-    'psf/black'
+    'psf/black',
+
+    -- git integration
+    'f-person/git-blame.nvim',
+    'lewis6991/gitsigns.nvim'
 }
 
 local opts = {}
