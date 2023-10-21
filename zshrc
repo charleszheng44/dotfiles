@@ -39,6 +39,7 @@ plugins=(
     jsontools
     z
     kubectl
+    you-should-use
     # plugins for macos:
     macos 
 )
@@ -60,7 +61,10 @@ export FZF_DEFAULT_OPTS="--multi \
 --header='CTRL-c or ESC to quit' \
 --color='dark,fg:magenta'"
 
+export FZF_CTRL_T_COMMAND='find . -type f -not -path "*/\.git/*"'
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 
 # user defined aliases
 # alias ls='ls --color'
@@ -70,6 +74,7 @@ alias gch='git checkout'
 alias kustomize='kubectl kustomize'
 alias kct='kubectl ctx'
 alias kns='kubectl ns'
+alias lg='lazygit'
 alias bat='bat --theme="Catppuccin-mocha"'
 go() {
     if [ $1 = "doc" ]; then
@@ -91,15 +96,9 @@ export PATH=$HOME/go/bin:$PATH
 # Rust setup
 export PATH=$HOME/.cargo/bin:$PATH
 
-# Java setup for osx
-if [[ $(uname) == "Darwin" ]]
-then
-    export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
-    export CPPFLAGS="-I/opt/homebrew/opt/openjdk/include"
-fi
-
 # kubectl shortcuts
 source $HOME/.zsh/kubectl_alias.sh
+
 
 export EDITOR=nvim
 
@@ -152,3 +151,10 @@ export NVM_DIR="$HOME/.nvm"
 
 # pyenv setup
 eval "$(pyenv init --path)"
+
+# tad auto completion
+source <(TAD_OFFLINE=1 tad zsh-completion)
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"

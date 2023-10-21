@@ -24,6 +24,8 @@ local plugins = {
         branch = 'v2'
     },
     "lukas-reineke/indent-blankline.nvim",
+    main = "ibl",
+    opts = {},
     'simrat39/rust-tools.nvim',
     {
         'akinsho/bufferline.nvim',
@@ -70,6 +72,7 @@ local plugins = {
         name = "catppuccin",
         priority = 1000
     },
+    'rebelot/kanagawa.nvim',
 
     -- language specific
     'psf/black',

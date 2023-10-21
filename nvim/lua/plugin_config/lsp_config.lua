@@ -1,6 +1,6 @@
 require('mason').setup()
 require('mason-lspconfig').setup {
-    ensure_installed = { 'lua_ls', 'rust_analyzer', 'gopls', 'jdtls', 'pyright', 'jsonls' },
+    ensure_installed = { 'lua_ls', 'rust_analyzer', 'gopls', 'pyright', 'jsonls', 'jdtls', 'bashls', 'yamlls' },
 }
 
 local on_attach = function(_, _)
@@ -33,6 +33,17 @@ require('lspconfig').rust_analyzer.setup {
     on_attach = on_attach,
     capabilities = capabilities
 }
+
+require('lspconfig').bashls.setup {
+    on_attach = on_attach,
+    capabilities = capabilities
+}
+
+require('lspconfig').yamlls.setup {
+    on_attach = on_attach,
+    capabilities = capabilities
+}
+
 require('lspconfig').gopls.setup {
     on_attach = on_attach,
     capabilities = capabilities,
@@ -47,8 +58,16 @@ require('lspconfig').gopls.setup {
     }
 }
 require('lspconfig').jdtls.setup {
-    on_attach = on_attach,
-    capabilities = capabilities
+    capabilities = capabilities,
+    init_options = {
+        settings = {
+            java = {
+                format = {
+                    enabled = false
+                }
+            }
+        }
+    }
 }
 
 require('lspconfig').jsonls.setup {
