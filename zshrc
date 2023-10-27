@@ -75,7 +75,7 @@ alias kustomize='kubectl kustomize'
 alias kct='kubectl ctx'
 alias kns='kubectl ns'
 alias lg='lazygit'
-alias bat='bat --theme="Catppuccin-mocha"'
+alias bat='bat --theme="base16"'
 go() {
     if [ $1 = "doc" ]; then
         shift

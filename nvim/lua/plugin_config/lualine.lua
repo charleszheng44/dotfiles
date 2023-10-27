@@ -1,3 +1,3 @@
 require('lualine').setup {
-    options = { theme = 'catppuccin-mocha' }
+    options = { theme = 'rose-pine' }
 }
