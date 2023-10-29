@@ -430,4 +430,4 @@ schemas:
       cyan: '#ebbcba'
       white: '#e0def4'
 
-colors: *rose-pine-moon
+colors: *mocha
