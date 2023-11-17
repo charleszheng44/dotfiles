@@ -26,10 +26,9 @@ export ZSH="$HOME/.oh-my-zsh"
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
 plugins=(
     aliases
+    fzf
     git
     zsh-autosuggestions
     web-search
@@ -99,6 +98,7 @@ export PATH=$HOME/.cargo/bin:$PATH
 # kubectl shortcuts
 source $HOME/.zsh/kubectl_alias.sh
 
+export PATH=/usr/local/nvim/bin/:$PATH
 
 export EDITOR=nvim
 
@@ -149,12 +149,15 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# pyenv setup
-eval "$(pyenv init --path)"
+# pyenv setup for non debian dist
+# eval "$(pyenv init --path)"
 
 # tad auto completion
-source <(TAD_OFFLINE=1 tad zsh-completion)
+# source <(TAD_OFFLINE=1 tad zsh-completion)
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+# pyenv setup for debian dist
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"

@@ -24,8 +24,8 @@ vim.opt.expandtab = true
 -- unformat paste
 vim.opt.pastetoggle = '<F2>'
 
-vim.cmd [[colorscheme catppuccin-mocha]]
-vim.o.termguicolors = true
+vim.cmd [[colorscheme gruvbox]]
+-- vim.o.termguicolors = true
 vim.o.background = "dark"
 
 -- use the terminal background

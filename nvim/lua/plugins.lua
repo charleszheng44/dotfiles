@@ -16,7 +16,6 @@ local plugins = {
     'nvim-tree/nvim-web-devicons',
     'nvim-lualine/lualine.nvim',
     'nvim-treesitter/nvim-treesitter',
-    'lewis6991/gitsigns.nvim',
     'preservim/vimux',
     'glepnir/lspsaga.nvim',
     {
@@ -47,7 +46,7 @@ local plugins = {
 
     {
         'nvim-telescope/telescope.nvim',
-        tag = '0.1.1',
+        tag = '0.1.4',
         dependencies = { 'nvim-lua/plenary.nvim' }
     },
 
@@ -77,13 +76,19 @@ local plugins = {
         'rose-pine/neovim',
         name = 'rose-pine'
     },
+    {
+        "ellisonleao/gruvbox.nvim",
+        priority = 1000,
+        config = true,
+        opts = ...
+    },
 
     -- language specific
     'psf/black',
 
     -- git integration
     'f-person/git-blame.nvim',
-    'lewis6991/gitsigns.nvim'
+    'lewis6991/gitsigns.nvim',
 }
 
 local opts = {}

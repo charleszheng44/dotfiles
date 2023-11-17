@@ -81,10 +81,15 @@ require('lspconfig').pyright.setup {
 }
 
 require('lspsaga').setup {
-    code_action_icon = "💡",
+    code_action_prompt = {
+        enable = false,
+        sign = false,
+        sign_priority = 20,
+        virtual_text = false
+    },
     symbol_in_winbar = {
         in_custom = false,
-        enable = true,
+        enable = false,
         separator = ' > ',
         show_file = true,
         file_formatter = ""
