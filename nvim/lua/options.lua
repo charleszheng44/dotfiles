@@ -29,7 +29,7 @@ vim.o.termguicolors = true
 vim.o.background = "dark"
 
 -- use the terminal background
--- vim.cmd [[hi Normal ctermbg=none guibg=none]]
+vim.cmd [[hi Normal ctermbg=none guibg=none]]
 
 -- set buffer size large enough
 vim.opt.maxmempattern = 3000000
@@ -53,3 +53,5 @@ vim.opt.clipboard = 'unnamedplus'
 
 -- auto format before existing
 vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
+
+vim.opt.signcolumn = 'yes'
