@@ -71,6 +71,7 @@ export FZF_CTRL_T_COMMAND='find . -type f -not -path "*/\.git/*"'
 alias ls='exa';
 alias nv='nvim'
 alias gch='git checkout'
+alias gaut='git add $(git ls-files --others --exclude-standard)'
 alias kustomize='kubectl kustomize'
 alias kct='kubectl ctx'
 alias kns='kubectl ns'
