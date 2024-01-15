@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 export SHELL=$(which zsh)
 
 if [[ $(uname) == "Darwin" ]]
@@ -44,9 +51,6 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
-
-# launch the starship
-eval "$(starship init zsh)"
 
 export FZF_DEFAULT_OPTS="--multi \
 --height=50% \
@@ -142,7 +146,7 @@ alias gco='fzf-git-checkout'
 
 autoload -U compinit && compinit
 
-export OPENAI_API_KEY="$(cat $HOME/.secrets/openai)"
+# export OPENAI_API_KEY="$(cat $HOME/.secrets/openai)"
 
 # nvm setup
 export NVM_DIR="$HOME/.nvm"
@@ -161,3 +165,7 @@ export SDKMAN_DIR="$HOME/.sdkman"
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
+source ~/powerlevel10k/powerlevel10k.zsh-theme
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

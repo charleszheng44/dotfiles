@@ -1,0 +1,49 @@
+import = [ "~/.config/alacritty/themes/themes/tokyo-night.toml" ]
+
+live_config_reload = true
+
+[keyboard]
+bindings = [
+    { key = "Q", mods = "Control", chars = "\u0011"},
+    { key = "N", mods = "Control|Shift", action = "SpawnNewInstance"},
+    { key = "B", mods = "Alt", chars = "\u001Bb"},
+    { key = "F", mods = "Alt", chars = "\u001Bf"},
+    { key = "D", mods = "Alt", chars = "\u001Bd"},
+    { key = "F11", action = "ToggleFullscreen"},
+]
+
+[cursor]
+unfocused_hollow = true
+
+[cursor.style]
+shape = "Block"
+
+[font]
+size = 11
+
+[font.bold]
+family = "MesloLGS NF"
+style = "Bold"
+
+[font.bold_italic]
+family = "MesloLGS NF"
+style = "Bold Italic"
+
+[font.italic]
+family = "MesloLGS NF"
+style = "Italic"
+
+[font.normal]
+family = "MesloLGS NF"
+style = "Regular"
+
+[font.offset]
+x = 1
+y = 1
+
+[window]
+opacity = 0.9
+
+[window.padding]
+x = 5
+y = 5
