@@ -71,10 +71,9 @@ export FZF_CTRL_T_COMMAND='find . -type f -not -path "*/\.git/*"'
 
 # user defined aliases
 # alias ls='ls --color'
-alias ls='exa';
+alias ls='eza';
 alias nv='nvim'
 alias gch='git checkout'
-alias kustomize='kubectl kustomize'
 alias kct='kubectl ctx'
 alias kns='kubectl ns'
 alias lg='lazygit'
@@ -169,3 +168,6 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+source ~/powerlevel10k/powerlevel10k.zsh-theme
+
+[[ -s "/Users/charlesz/.gvm/scripts/gvm" ]] && source "/Users/charlesz/.gvm/scripts/gvm"

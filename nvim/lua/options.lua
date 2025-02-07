@@ -22,9 +22,9 @@ vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 -- unformat paste
-vim.opt.pastetoggle = '<F2>'
+-- vim.opt.pastetoggle = '<F2>'
 
-vim.cmd [[colorscheme tokyonight]]
+vim.cmd [[colorscheme catppuccin-mocha]]
 -- vim.o.termguicolors = true
 vim.o.background = "dark"
 

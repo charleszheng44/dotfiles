@@ -1,1 +1,4 @@
 set clipboard+=unnamed
+set ignorecase
+set visualbell
+set noerrorbells
