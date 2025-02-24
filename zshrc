@@ -171,3 +171,13 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 [[ -s "/Users/charlesz/.gvm/scripts/gvm" ]] && source "/Users/charlesz/.gvm/scripts/gvm"
+
+# load the openai api key if exist
+[[ -f ~/.openai_api_key ]] && export OPENAI_API_KEY=$(<~/.openai_api_key)
+
+export PATH=$HOME/Works/ai-tools/bin:$PATH
+
+# # Update PATH for the Google Cloud SDK.
+source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
+# Enable command-line completion for gcloud.
+source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"

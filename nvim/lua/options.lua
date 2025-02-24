@@ -38,6 +38,7 @@ vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 -- don't fold when open a new file
 vim.opt.foldlevelstart = 20
+vim.opt.signcolumn = "yes"
 
 -- enable mouse
 vim.opt.mouse = 'a'
