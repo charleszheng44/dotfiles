@@ -17,5 +17,6 @@ require('telescope').setup {
                 prompt_position = "top",
             },
         },
+        path_display = { shorten = 1 },
     },
 }

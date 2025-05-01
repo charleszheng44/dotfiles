@@ -15,15 +15,15 @@ then
     export PATH=$(brew --prefix)/opt/coreutils/libexec/gnubin:$PATH
 
     # The next line updates PATH for the Google Cloud SDK.
-    if [ -f '/Users/${USER}/opt/google-cloud-sdk/path.zsh.inc' ]
+    if [ -f "/Users/$USER/opt/google-cloud-sdk/path.zsh.inc" ]
     then 
-        . '/Users/${USER}/opt/google-cloud-sdk/path.zsh.inc'
+        . "/Users/$USER/opt/google-cloud-sdk/path.zsh.inc"
     fi
 
     # The next line enables shell command completion for gcloud.
-    if [ -f '/Users/${USER}/opt/google-cloud-sdk/completion.zsh.inc' ]
+    if [ -f "/Users/$USER/opt/google-cloud-sdk/completion.zsh.inc" ]
     then 
-        . '/Users/${USER}/opt/google-cloud-sdk/completion.zsh.inc'
+        . "/Users/$USER/opt/google-cloud-sdk/completion.zsh.inc"
     fi
 fi
 
@@ -52,17 +52,23 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-export FZF_DEFAULT_OPTS="--multi \
---height=50% \
---margin=1%,1%,1%,1% \
---layout=reverse-list \
---border=rounded \
---info=inline \
---prompt='$>' \
---pointer='→' \
---marker='♡' \
---header='CTRL-c or ESC to quit' \
---color='dark,fg:magenta'"
+export FZF_DEFAULT_OPTS='
+  --multi
+  --height=50%
+  --margin=1%,1%,1%,1%
+  --layout=reverse-list
+  --border=rounded
+  --info=inline
+  --prompt="$>"
+  --pointer="→"
+  --marker="♡"
+  --header="CTRL-c or ESC to quit"
+  --color="dark,fg:magenta"
+  --ansi
+  --preview "bat --style=numbers --color=always {}"
+  --preview-window "right:60%,wrap"
+'
+
 
 export FZF_CTRL_T_COMMAND='find . -type f -not -path "*/\.git/*"'
 
@@ -79,7 +85,7 @@ alias kns='kubectl ns'
 alias lg='lazygit'
 alias bat='bat --theme="base16"'
 go() {
-    if [ $1 = "doc" ]; then
+    if [ $# -gt 0 ] && [ "$1" = "doc" ]; then
         shift
         command go doc $@ | bat -l go --style=plain 
     else
@@ -107,6 +113,9 @@ export EDITOR=nvim
 
 # krew
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+
+# fzf git setup
+source ~/.config/fzf-git.sh/fzf-git.sh
 
 # fzf git branch checkout
 #
@@ -164,8 +173,6 @@ export SDKMAN_DIR="$HOME/.sdkman"
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
-source ~/powerlevel10k/powerlevel10k.zsh-theme
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 source ~/powerlevel10k/powerlevel10k.zsh-theme
@@ -177,7 +184,14 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 export PATH=$HOME/Works/ai-tools/bin:$PATH
 
-# # Update PATH for the Google Cloud SDK.
-source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
+# Update PATH for the Google Cloud SDK.
+if [ -f "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc" ]; then
+  source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
+fi
 # Enable command-line completion for gcloud.
-source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
+if [ -f "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc" ]; then
+  source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
+fi
+
+# allow cline to see the output of the terminal in vscode
+[[ "$TERM_PROGRAM" == "vscode" ]] && . "$(code --locate-shell-integration-path zsh)"
