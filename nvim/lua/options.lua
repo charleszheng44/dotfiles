@@ -22,9 +22,9 @@ vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 -- unformat paste
-vim.opt.pastetoggle = '<F2>'
+vim.keymap.set('n', '<F2>', ':set paste!<CR>', { silent = true })
 
-vim.cmd [[colorscheme duskfox]]
+vim.cmd [[colorscheme nightfox]]
 vim.o.termguicolors = true
 vim.o.background = "dark"
 
@@ -47,6 +47,9 @@ vim.opt.colorcolumn = '80'
 
 -- set the height of the comand prompt window to 1
 vim.opt.cmdheight = 1
+
+-- always show the sign column
+vim.opt.signcolumn = 'yes'
 
 -- copy to system clipboard
 vim.opt.clipboard = 'unnamedplus'
