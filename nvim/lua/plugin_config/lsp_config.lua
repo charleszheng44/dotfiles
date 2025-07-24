@@ -1,6 +1,6 @@
 require('mason').setup()
 require('mason-lspconfig').setup {
-    ensure_installed = { 'lua_ls', 'rust_analyzer', 'gopls', 'pyright', 'jsonls', 'jdtls', 'bashls', 'yamlls' },
+    ensure_installed = { 'lua_ls', 'rust_analyzer', 'gopls', 'pyright', 'jsonls', 'jdtls', 'bashls', 'yamlls', 'helm_ls' },
 }
 
 local on_attach = function(_, _)
@@ -40,8 +40,38 @@ require('lspconfig').bashls.setup {
 }
 
 require('lspconfig').yamlls.setup {
+    on_attach = function(client, bufnr)
+        -- Don't attach yamlls to helm files
+        if vim.bo[bufnr].filetype == "helm" then
+            client.stop()
+            return
+        end
+        on_attach(client, bufnr)
+    end,
+    capabilities = capabilities,
+    settings = {
+        yaml = {
+            schemas = {
+                kubernetes = "*.yaml",
+            },
+            validate = true,
+            completion = true,
+            hover = true,
+        }
+    }
+}
+
+require('lspconfig').helm_ls.setup {
     on_attach = on_attach,
-    capabilities = capabilities
+    capabilities = capabilities,
+    filetypes = {"helm"},
+    settings = {
+        ['helm-ls'] = {
+            yamlls = {
+                path = "yaml-language-server",
+            }
+        }
+    }
 }
 
 require('lspconfig').gopls.setup {
@@ -79,6 +109,28 @@ require('lspconfig').pyright.setup {
     on_attach = on_attach,
     capabilities = capabilities
 }
+
+-- Configure diagnostics to show popup on cursor hold
+vim.diagnostic.config({
+    virtual_text = true,
+    signs = true,
+    underline = true,
+    update_in_insert = false,
+    severity_sort = false,
+    float = {
+        border = 'rounded',
+        source = 'always',
+        header = '',
+        prefix = '',
+    },
+})
+
+-- Show diagnostic popup on cursor hold
+vim.cmd [[autocmd CursorHold * lua vim.diagnostic.open_float(nil, {focus=false})]]
+vim.cmd [[autocmd CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
+
+-- Set shorter updatetime for faster popup (default is 4000ms)
+vim.opt.updatetime = 300
 
 require('lspsaga').setup {
     code_action_prompt = {

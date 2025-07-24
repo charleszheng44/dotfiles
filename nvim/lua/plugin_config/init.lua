@@ -11,3 +11,17 @@ require('plugin_config.nightfox')
 require('plugin_config.rose-pine')
 require('plugin_config.gitsigns')
 require('plugin_config.tokyonight')
+require('plugin_config.copilot')
+
+-- Helm template file detection
+vim.cmd([[
+  augroup helm_filetype
+    autocmd!
+    autocmd BufRead,BufNewFile */templates/*.yaml set filetype=helm
+    autocmd BufRead,BufNewFile */templates/*.yml set filetype=helm
+    autocmd BufRead,BufNewFile values.yaml set filetype=helm
+    autocmd BufRead,BufNewFile values.yml set filetype=helm
+    autocmd BufRead,BufNewFile Chart.yaml set filetype=helm
+    autocmd BufRead,BufNewFile Chart.yml set filetype=helm
+  augroup end
+]])
