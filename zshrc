@@ -146,7 +146,8 @@ alias gco='fzf-git-checkout'
 
 autoload -U compinit && compinit
 
-# export OPENAI_API_KEY="$(cat $HOME/.secrets/openai)"
+# openai access key setup
+export OPENAI_API_KEY="$(cat $HOME/.secrets/openai)"
 
 # nvm setup
 export NVM_DIR="$HOME/.nvm"
