@@ -163,4 +163,4 @@ eval "$(pyenv init -)"
 
 [ -f $HOME/.sbn_aliases ] && source $HOME/.sbn_aliases
 
-eval "$(oh-my-posh init zsh --config $HOME/.config/omp/emodipt.omp.json)"
+eval "$(starship init zsh)"
