@@ -24,7 +24,7 @@ vim.opt.expandtab = true
 -- unformat paste
 vim.keymap.set('n', '<F2>', ':set paste!<CR>', { silent = true })
 
-vim.cmd [[colorscheme gruvbox]]
+vim.cmd [[colorscheme catppuccin-macchiato]]
 vim.o.termguicolors = true
 vim.o.background = "dark"
 

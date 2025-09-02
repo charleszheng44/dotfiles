@@ -148,19 +148,5 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# pyenv setup for non debian dist
-# eval "$(pyenv init --path)"
-
-# tad auto completion
-# source <(TAD_OFFLINE=1 tad zsh-completion)
-
-# pyenv setup for debian dist
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-
-[ -f $HOME/.sbn_aliases ] && source $HOME/.sbn_aliases
-
-eval "$(oh-my-posh init zsh --config $HOME/.config/omp/emodipt.omp.json)"
+# starship setup
+eval "$(starship init zsh)"
