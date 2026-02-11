@@ -195,3 +195,4 @@ fi
 
 # allow cline to see the output of the terminal in vscode
 [[ "$TERM_PROGRAM" == "vscode" ]] && . "$(code --locate-shell-integration-path zsh)"
+[ -f $HOME/.sbn_aliases ] && source $HOME/.sbn_aliases
