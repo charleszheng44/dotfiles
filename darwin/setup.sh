@@ -3,31 +3,24 @@
 set -e
 
 CONFIG_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+REPO_DIR="$( cd "$CONFIG_DIR/.." && pwd )"
 
-# setup alacritty
-[ -d ~/.config/alacritty ] && rm -rf ~/.config/alacritty
-[ -L ~/.config/alacritty ] && rm ~/.config/alacritty
-ln -s $CONFIG_DIR/alacritty ~/.config/alacritty
+link() {
+    local src="$1" dst="$2"
+    if [ -e "$dst" ] || [ -L "$dst" ]; then
+        rm -rf "$dst"
+    fi
+    ln -s "$src" "$dst"
+}
 
-# setup zshrc
-[ -f ~/.zshrc ] && rm ~/.zshrc
-[ -L ~/.zshrc ] && rm ~/.zshrc
-ln -s $CONFIG_DIR/zshrc ~/.zshrc
-[ -d ~/.zsh ] && rm -rf ~/.zsh
-[ -L ~/.zsh ] && rm ~/.zsh
-ln -s $CONFIG_DIR/zsh ~/.zsh
+mkdir -p ~/.config
 
-# setup tmux
-[ -f ~/.tmux.conf ] && rm ~/.tmux.conf
-[ -L ~/.tmux.conf ] && rm ~/.tmux.conf
-ln -s $CONFIG_DIR/tmux.conf ~/.tmux.conf
-[ -d ~/.tmux ] && rm -rf ~/.tmux
-[ -L ~/.tmux ] && rm ~/.tmux
-ln -s $CONFIG_DIR/tmux ~/.tmux
-
-# setup starship
-[ -f ~/.config/starship.toml ] && rm ~/.config/starship.toml
-[ -L ~/.config/starship.toml ] && rm ~/.config/starship.toml
-mkdir -p ~/.config && ln -s $CONFIG_DIR/starship.toml ~/.config/starship.toml
-
-# setup neovim
+link "$CONFIG_DIR/zshrc"         ~/.zshrc
+link "$CONFIG_DIR/zsh"           ~/.zsh
+link "$CONFIG_DIR/tmux.conf"     ~/.tmux.conf
+link "$CONFIG_DIR/tmux"          ~/.tmux
+link "$CONFIG_DIR/ideavimrc"     ~/.ideavimrc
+link "$CONFIG_DIR/starship.toml" ~/.config/starship.toml
+link "$CONFIG_DIR/nvim"          ~/.config/nvim
+link "$CONFIG_DIR/ghostty"       ~/.config/ghostty
+link "$REPO_DIR/fzf-git.sh"      ~/.config/fzf-git.sh

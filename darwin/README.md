@@ -45,9 +45,7 @@ $(brew --prefix)/opt/fzf/install --key-bindings --completion --no-update-rc
 ## 4. Install GUI apps (optional)
 
 ```bash
-brew install --cask alacritty ghostty
-brew install --cask nikitabobko/tap/aerospace
-brew install --cask sketchybar
+brew install --cask ghostty
 ```
 
 ## 5. Install oh-my-zsh and plugins
@@ -71,35 +69,19 @@ cd ~/Works/dotfiles/darwin
 
 This links:
 
-| Source                        | Target                        |
-| ----------------------------- | ----------------------------- |
-| `darwin/zshrc`                | `~/.zshrc`                    |
-| `darwin/zsh`                  | `~/.zsh`                      |
-| `darwin/tmux.conf`            | `~/.tmux.conf`                |
-| `darwin/tmux`                 | `~/.tmux`                     |
-| `darwin/starship.toml`        | `~/.config/starship.toml`     |
-| `darwin/alacritty`            | `~/.config/alacritty`         |
+| Source                   | Target                    |
+| ------------------------ | ------------------------- |
+| `darwin/zshrc`           | `~/.zshrc`                |
+| `darwin/zsh`             | `~/.zsh`                  |
+| `darwin/tmux.conf`       | `~/.tmux.conf`            |
+| `darwin/tmux`            | `~/.tmux`                 |
+| `darwin/ideavimrc`       | `~/.ideavimrc`            |
+| `darwin/starship.toml`   | `~/.config/starship.toml` |
+| `darwin/nvim`            | `~/.config/nvim`          |
+| `darwin/ghostty`         | `~/.config/ghostty`       |
+| `fzf-git.sh`             | `~/.config/fzf-git.sh`    |
 
-For the configs `setup.sh` does not cover yet, link them manually:
-
-```bash
-mkdir -p ~/.config
-ln -sfn ~/Works/dotfiles/darwin/nvim       ~/.config/nvim
-ln -sfn ~/Works/dotfiles/darwin/ghostty    ~/.config/ghostty
-ln -sfn ~/Works/dotfiles/darwin/aerospace  ~/.config/aerospace
-ln -sfn ~/Works/dotfiles/darwin/sketchybar ~/.config/sketchybar
-ln -sfn ~/Works/dotfiles/darwin/ideavimrc  ~/.ideavimrc
-ln -sfn ~/Works/dotfiles/fzf-git.sh        ~/.config/fzf-git.sh
-```
-
-## 7. Install tmux plugin manager
-
-```bash
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-# after starting tmux, press: Ctrl-q + I  (capital I) to install plugins
-```
-
-## 8. Install language toolchains (as needed)
+## 7. Install language toolchains (as needed)
 
 ```bash
 # Rust
@@ -115,7 +97,7 @@ curl -s "https://get.sdkman.io" | bash
 # or:  brew install nvm
 ```
 
-## 9. kubectl extras (optional)
+## 8. kubectl extras (optional)
 
 ```bash
 brew install kubectl kubectx
@@ -132,7 +114,7 @@ brew install kubectl kubectx
 )
 ```
 
-## 10. Reload the shell
+## 9. Reload the shell
 
 ```bash
 exec zsh
@@ -141,5 +123,4 @@ exec zsh
 ## Notes
 
 - Re-running `./setup.sh` is safe — it removes stale files/links before recreating them.
-- The `nopctl completion zsh` line at the bottom of `zshrc` is Netflix-specific; remove it if you don't have `nopctl` installed.
 - The `you-should-use` oh-my-zsh plugin is referenced in `zshrc`; step 5 installs it.
