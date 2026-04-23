@@ -52,7 +52,7 @@ export FZF_CTRL_T_COMMAND='find . -type f -not -path "*/\.git/*"'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # user defined aliases
-# alias ls='ls --color'
+alias cc='claude'
 alias ls='eza';
 alias nv='nvim'
 alias gch='git checkout'
@@ -145,3 +145,6 @@ eval "$(starship init zsh)"
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+# nopctl shell completions
+source <(nopctl completion zsh)
