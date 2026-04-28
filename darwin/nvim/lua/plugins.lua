@@ -17,7 +17,14 @@ local plugins = {
     'nvim-lualine/lualine.nvim',
     {
         'nvim-treesitter/nvim-treesitter',
-        branch = 'master',
+        branch = 'main',
+        lazy = false,
+        build = ':TSUpdate',
+    },
+    {
+        'nvim-treesitter/nvim-treesitter-textobjects',
+        branch = 'main',
+        dependencies = { 'nvim-treesitter/nvim-treesitter' },
     },
     'preservim/vimux',
     'glepnir/lspsaga.nvim',
