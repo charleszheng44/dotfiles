@@ -141,7 +141,4 @@ autoload -U compinit && compinit
 # init the starship
 eval "$(starship init zsh)"
 
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+[ -f $HOME/.zsh_secrets ] && source $HOME/.zsh_secrets

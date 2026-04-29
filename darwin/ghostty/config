@@ -7,7 +7,7 @@ theme = "catppuccin-mocha.conf"
 # Set the background opacity to 0.9
 background-opacity = 0.9
 # Hide the titlebar on macOS
-macos-titlebar-style = hidden
+# macos-titlebar-style = hidden
 # Enable font thickening
 font-thicken = true
 window-decoration = "server"
