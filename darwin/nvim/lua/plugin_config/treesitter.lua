@@ -1,7 +1,7 @@
 require('nvim-treesitter').setup()
 
 local parsers = {
-    'bash', 'c', 'cpp', 'go', 'json', 'lua', 'markdown', 'markdown_inline',
+    'bash', 'c', 'cpp', 'go', 'json', 'lua', 'make', 'markdown', 'markdown_inline',
     'python', 'rust', 'toml', 'tsx', 'typescript', 'vim', 'vimdoc', 'yaml',
 }
 require('nvim-treesitter').install(parsers)
