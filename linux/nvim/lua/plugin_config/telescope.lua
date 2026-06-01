@@ -17,5 +17,8 @@ require('telescope').setup {
                 prompt_position = "top",
             },
         },
+        preview = {
+            treesitter = false,
+        },
     },
 }

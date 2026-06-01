@@ -18,5 +18,8 @@ require('telescope').setup {
             },
         },
         path_display = { shorten = 1 },
+        preview = {
+            treesitter = false,
+        },
     },
 }

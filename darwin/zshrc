@@ -52,7 +52,9 @@ export FZF_CTRL_T_COMMAND='find . -type f -not -path "*/\.git/*"'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # user defined aliases
+alias tx='tmux'
 alias cc='claude'
+alias ca='claude agents'
 alias ls='eza';
 alias nv='nvim'
 alias gch='git checkout'
